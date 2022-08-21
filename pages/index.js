@@ -1,9 +1,15 @@
-import { getPosts } from "utilits/firebase";
+import Head from "next/head";
 
-const HomePage = () => (
-  <div className='homePage'>
-    <h1>Hello from HomePage!</h1>
-  </div>
-);
+export default function Home() {
+  return (
+    <div className="container">
+      <Head>
+        <title>Evernote Clone</title>
+        <meta name="description" content="This is an Evernote Clone" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-export default HomePage;
+      <main className="main"></main>
+    </div>
+  );
+}

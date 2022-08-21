@@ -1,43 +1,19 @@
-// This is where we'll add all of the functions for interacting with
-// Firebase services in our app.
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import { getFirestore } from "firebase/firestore";
 
-import firebase from 'firebase/app';
-import 'firebase/database';
-
-const initFirebase = async () => {
-  // This check prevents us from initializing more than one app.
-  if (!firebase.apps.length) {
-    firebase.initializeApp({
-      apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-      databaseURL: process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL,
-      projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-    });
-  }
+const firebaseConfig = {
+  apiKey: "AIzaSyBM6OVFl82otXNu8FQS3U8XXssiBdqc43s",
+  authDomain: "afrotech-ea17c.firebaseapp.com",
+  databaseURL: "https://afrotech-ea17c-default-rtdb.firebaseio.com",
+  projectId: "afrotech-ea17c",
+  storageBucket: "afrotech-ea17c.appspot.com",
+  messagingSenderId: "134171575533",
+  appId: "1:134171575533:web:c319ce92241e3fe5ffb8e4",
+  measurementId: "G-E0NDY0WF83",
 };
 
-// Gets all posts from the database in reverse chronological order.
-export const getPosts = async () => {
-  // Because our exported functions can be called at any time from
-  // any place in our app, we need to make sure we've initialized
-  // a Firebase app every time these functions are invoked.
-  initFirebase();
 
-  const posts = await firebase
-    .database()
-    .ref('/posts')
-    .orderByChild('dateCreated')
-    .once('value')
-    .then((snapshot) => {
-      const snapshotVal = snapshot.val();
-
-      const result = [];
-      for (var slug in snapshotVal) {
-        const post = snapshotVal[slug];
-        result.push(post);
-      }
-
-      return result.reverse();
-    });
-
-  return posts;
-};
+export const app = initializeApp(firebaseConfig);
+export const database = getFirestore(app);
+export const analytics = getAnalytics(app);
