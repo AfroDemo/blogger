@@ -1,4 +1,4 @@
-
+import { getPosts } from "utilits/firebase";
 
 const HomePage = () => (
   <div className='homePage'>

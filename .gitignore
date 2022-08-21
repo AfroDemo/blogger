@@ -35,6 +35,3 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-
-# db
-/utils/db/serviceAccountKey.json
