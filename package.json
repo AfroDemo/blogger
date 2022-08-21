@@ -1,5 +1,5 @@
 {
-  "name": "blogger",
+  "name": "AfrodemozTech",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -13,12 +13,26 @@
     "dashify": "^2.0.0",
     "firebase": "^9.9.3",
     "firebase-admin": "^11.0.1",
-    "next": "12.2.5",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "next": "^12.2.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.54.5"
   },
   "devDependencies": {
     "eslint": "8.22.0",
     "eslint-config-next": "12.2.5"
-  }
+  },
+  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "main": "next.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AfroDemo/blogger.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AfroDemo/blogger/issues"
+  },
+  "homepage": "https://github.com/AfroDemo/blogger#readme"
 }
